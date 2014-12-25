@@ -28,7 +28,7 @@
         )
         $tasks = Get-ScheduledTask
 
-        if($tasks -contains $Name) {
+        if($tasks.TaskName -contains $Name) {
             return $true
         }
         else {
@@ -49,7 +49,7 @@
         $tasks = Get-ScheduledTask
 
         if($Ensure -eq "ABSENT") {
-            if($tasks -contains $Name) {
+            if($tasks.TaskName -contains $Name) {
                 Write-Verbose "Deleting Scheduled Task $Name"
                 try{
                     schtasks.exe /delete /tn $Name /f
