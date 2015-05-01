@@ -216,7 +216,7 @@ Function Set-TargetResource
             [hashtable]$TriggerParams = Convert-KeyValuePairArrayToHashtable -array $TriggerParams
             if ($TaskSettings -ne $null)
             {
-                $TaskSettings = Convert-KeyValuePairArrayToHashtable -array $TaskSettings
+                [hashtable]$TaskSettings = Convert-KeyValuePairArrayToHashtable -array $TaskSettings
             }
 
             # Ensure for mandatory parameter
